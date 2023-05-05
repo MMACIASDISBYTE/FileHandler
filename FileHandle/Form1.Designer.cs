@@ -36,6 +36,9 @@
             label2 = new Label();
             txtNewSubDirectory = new TextBox();
             btnNewSubDirectory = new Button();
+            label3 = new Label();
+            cboDirectoryFiles = new ComboBox();
+            btmShowDirectoryFiles = new Button();
             SuspendLayout();
             // 
             // cboSystemDrives
@@ -49,10 +52,10 @@
             // 
             // txtSystemDetails
             // 
-            txtSystemDetails.Location = new Point(51, 103);
+            txtSystemDetails.Location = new Point(52, 103);
             txtSystemDetails.Multiline = true;
             txtSystemDetails.Name = "txtSystemDetails";
-            txtSystemDetails.Size = new Size(336, 211);
+            txtSystemDetails.Size = new Size(336, 282);
             txtSystemDetails.TabIndex = 1;
             // 
             // label1
@@ -69,14 +72,14 @@
             // 
             txtNewDirectory.Location = new Point(670, 34);
             txtNewDirectory.Name = "txtNewDirectory";
-            txtNewDirectory.Size = new Size(178, 27);
+            txtNewDirectory.Size = new Size(232, 27);
             txtNewDirectory.TabIndex = 3;
             // 
             // btnCreateDirectory
             // 
-            btnCreateDirectory.Location = new Point(882, 31);
+            btnCreateDirectory.Location = new Point(956, 29);
             btnCreateDirectory.Name = "btnCreateDirectory";
-            btnCreateDirectory.Size = new Size(134, 30);
+            btnCreateDirectory.Size = new Size(163, 30);
             btnCreateDirectory.TabIndex = 4;
             btnCreateDirectory.Text = "Create";
             btnCreateDirectory.UseVisualStyleBackColor = true;
@@ -96,27 +99,58 @@
             // 
             txtNewSubDirectory.Location = new Point(670, 82);
             txtNewSubDirectory.Name = "txtNewSubDirectory";
-            txtNewSubDirectory.Size = new Size(178, 27);
+            txtNewSubDirectory.Size = new Size(232, 27);
             txtNewSubDirectory.TabIndex = 3;
             // 
             // btnNewSubDirectory
             // 
-            btnNewSubDirectory.Location = new Point(882, 80);
+            btnNewSubDirectory.Location = new Point(956, 77);
             btnNewSubDirectory.Name = "btnNewSubDirectory";
-            btnNewSubDirectory.Size = new Size(163, 29);
+            btnNewSubDirectory.Size = new Size(164, 30);
             btnNewSubDirectory.TabIndex = 5;
             btnNewSubDirectory.Text = "Create SubDirectory";
             btnNewSubDirectory.UseVisualStyleBackColor = true;
             btnNewSubDirectory.Click += btnNewSubDirectory_Click;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(434, 132);
+            label3.Name = "label3";
+            label3.Size = new Size(169, 20);
+            label3.TabIndex = 2;
+            label3.Text = "Show Directory Details";
+            // 
+            // cboDirectoryFiles
+            // 
+            cboDirectoryFiles.FormattingEnabled = true;
+            cboDirectoryFiles.Location = new Point(670, 130);
+            cboDirectoryFiles.Name = "cboDirectoryFiles";
+            cboDirectoryFiles.Size = new Size(232, 28);
+            cboDirectoryFiles.TabIndex = 6;
+            // 
+            // btmShowDirectoryFiles
+            // 
+            btmShowDirectoryFiles.Location = new Point(955, 127);
+            btmShowDirectoryFiles.Name = "btmShowDirectoryFiles";
+            btmShowDirectoryFiles.Size = new Size(164, 32);
+            btmShowDirectoryFiles.TabIndex = 7;
+            btmShowDirectoryFiles.Text = "Show DirectoryFIles";
+            btmShowDirectoryFiles.UseVisualStyleBackColor = true;
+            btmShowDirectoryFiles.Click += btmShowDirectoryFiles_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1341, 450);
+            ClientSize = new Size(1353, 589);
+            Controls.Add(btmShowDirectoryFiles);
+            Controls.Add(cboDirectoryFiles);
             Controls.Add(btnNewSubDirectory);
             Controls.Add(btnCreateDirectory);
             Controls.Add(txtNewSubDirectory);
+            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(txtNewDirectory);
             Controls.Add(label1);
@@ -138,5 +172,8 @@
         private Label label2;
         private TextBox txtNewSubDirectory;
         private Button btnNewSubDirectory;
+        private Label label3;
+        private ComboBox cboDirectoryFiles;
+        private Button btmShowDirectoryFiles;
     }
 }

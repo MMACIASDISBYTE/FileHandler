@@ -75,7 +75,7 @@ namespace FileHandle
             {
                 if (string.IsNullOrEmpty(txtNewDirectory.Text))
                     throw new Exception("Make sure you have included a directory path on new Directory");
-                if(string.IsNullOrEmpty(txtNewSubDirectory.Text))
+                if (string.IsNullOrEmpty(txtNewSubDirectory.Text))
                     throw new Exception("Make sure you have included a path for the  new subdirectory");
 
                 var directoryPath = txtNewDirectory.Text;
@@ -84,6 +84,39 @@ namespace FileHandle
                 MessageBox.Show("subDirectory has Been created");
 
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btmShowDirectoryFiles_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txtNewDirectory.Text))
+                    throw new Exception("Make sure you have included a directory path on new Directory");
+
+                var directory = txtNewDirectory.Text;
+                var directoryInfo = new DirectoryInfo(directory);
+
+                if (!directoryInfo.Exists)
+                    throw new Exception("Directory doesn't exist");
+
+                var subDirectories = directoryInfo.GetDirectories();
+                foreach (var subDir in subDirectories)
+                {
+                    if (!cboDirectoryFiles.Items.Contains(subDir.Name))
+                        cboDirectoryFiles.Items.Add(subDir.Name);
+                }
+
+                var files = directoryInfo.GetFiles("*"); // "*" trae todos los archivos
+                foreach (var file in files)
+                {
+                    if (!cboDirectoryFiles.Items.Contains($"{file.Name}"))
+                        cboDirectoryFiles.Items.Add($"{file.Name}");
+                }
             }
             catch (Exception ex)
             {
