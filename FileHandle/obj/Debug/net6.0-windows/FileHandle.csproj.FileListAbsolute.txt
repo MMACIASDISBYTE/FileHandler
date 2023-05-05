@@ -1,0 +1,17 @@
+C:\Users\Mariano Macias\source\repos\FileHandle\FileHandle\bin\Debug\net6.0-windows\FileHandle.exe
+C:\Users\Mariano Macias\source\repos\FileHandle\FileHandle\bin\Debug\net6.0-windows\FileHandle.deps.json
+C:\Users\Mariano Macias\source\repos\FileHandle\FileHandle\bin\Debug\net6.0-windows\FileHandle.runtimeconfig.json
+C:\Users\Mariano Macias\source\repos\FileHandle\FileHandle\bin\Debug\net6.0-windows\FileHandle.dll
+C:\Users\Mariano Macias\source\repos\FileHandle\FileHandle\bin\Debug\net6.0-windows\FileHandle.pdb
+C:\Users\Mariano Macias\source\repos\FileHandle\FileHandle\obj\Debug\net6.0-windows\FileHandle.csproj.AssemblyReference.cache
+C:\Users\Mariano Macias\source\repos\FileHandle\FileHandle\obj\Debug\net6.0-windows\FileHandle.Form1.resources
+C:\Users\Mariano Macias\source\repos\FileHandle\FileHandle\obj\Debug\net6.0-windows\FileHandle.csproj.GenerateResource.cache
+C:\Users\Mariano Macias\source\repos\FileHandle\FileHandle\obj\Debug\net6.0-windows\FileHandle.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mariano Macias\source\repos\FileHandle\FileHandle\obj\Debug\net6.0-windows\FileHandle.AssemblyInfoInputs.cache
+C:\Users\Mariano Macias\source\repos\FileHandle\FileHandle\obj\Debug\net6.0-windows\FileHandle.AssemblyInfo.cs
+C:\Users\Mariano Macias\source\repos\FileHandle\FileHandle\obj\Debug\net6.0-windows\FileHandle.csproj.CoreCompileInputs.cache
+C:\Users\Mariano Macias\source\repos\FileHandle\FileHandle\obj\Debug\net6.0-windows\FileHandle.dll
+C:\Users\Mariano Macias\source\repos\FileHandle\FileHandle\obj\Debug\net6.0-windows\refint\FileHandle.dll
+C:\Users\Mariano Macias\source\repos\FileHandle\FileHandle\obj\Debug\net6.0-windows\FileHandle.pdb
+C:\Users\Mariano Macias\source\repos\FileHandle\FileHandle\obj\Debug\net6.0-windows\FileHandle.genruntimeconfig.cache
+C:\Users\Mariano Macias\source\repos\FileHandle\FileHandle\obj\Debug\net6.0-windows\ref\FileHandle.dll
