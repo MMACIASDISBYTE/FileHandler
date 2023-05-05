@@ -266,16 +266,67 @@ namespace FileHandle
         {
             try
             {
-            if (string.IsNullOrEmpty(txtSelectedFile.Text))
-                throw new Exception("Make sure you selected a file...");
-            if (!File.Exists(txtSelectedFile.Text))
-                throw new Exception("Selectec File doesn't exist");
+                if (string.IsNullOrEmpty(txtSelectedFile.Text))
+                    throw new Exception("Make sure you selected a file...");
+                if (!File.Exists(txtSelectedFile.Text))
+                    throw new Exception("Selectec File doesn't exist");
 
-            FileStream fs = new FileStream(txtSelectedFile.Text, FileMode.Open, FileAccess.Read);
-            StreamReader sr = new StreamReader(fs);
-            txtRead.Text = sr.ReadToEnd();
-            fs.Close() ;
+                FileStream fs = new FileStream(txtSelectedFile.Text, FileMode.Open, FileAccess.Read);
+                StreamReader sr = new StreamReader(fs);
+                txtRead.Text = sr.ReadToEnd();
+                fs.Close();
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txtSelectedFile.Text))
+                    throw new Exception("Make sure you selected a file...");
+                if (!File.Exists(txtSelectedFile.Text))
+                    throw new Exception("Selectec File doesn't exist");
+
+                FileStream fs = new FileStream(txtSelectedFile.Text, FileMode.Open, FileAccess.Read);
+                StreamReader sr = new StreamReader(fs);
+
+                var content = sr.ReadToEnd();
+
+                int i = content.IndexOf(txtFind.Text.Trim(), 0);
+
+                if (i > -1)
+                    MessageBox.Show("The string is present in the file");
+                else
+                    MessageBox.Show("The string was't found in the file");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txtSelectedFile.Text))
+                    throw new Exception("Make sure you selected a file...");
+                if (!File.Exists(txtSelectedFile.Text))
+                    throw new Exception("Selectec File doesn't exist");
+
+                var path = txtSelectedFile.Text;
+
+                var sw = File.AppendText(path);
+                sw.WriteLine(txtUpdate.Text);
+                sw.Close();
+
+                MessageBox.Show("File contents appended succesfully");
             }
             catch (Exception ex)
             {
