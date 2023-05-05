@@ -193,6 +193,50 @@ namespace FileHandle
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnOpenFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    txtSelectedFile.Text = openFileDialog.FileName;
+                    txtRanemeName.Text = openFileDialog.FileName;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRenameFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var source = txtSelectedFile.Text;
+                var destination = txtRanemeName.Text;
+
+                var sourceFileInfo = new FileInfo(source);
+                if(sourceFileInfo.Exists)
+                {
+                    sourceFileInfo.MoveTo(destination);
+                    MessageBox.Show("The file has been renamed");
+                }
+                else
+                {
+                    MessageBox.Show("Error when traying to rename the file. Is the path correct?");
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 
 }

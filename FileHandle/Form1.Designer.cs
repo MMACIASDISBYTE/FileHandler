@@ -47,6 +47,15 @@
             label6 = new Label();
             label5 = new Label();
             btnNewFile = new Button();
+            label7 = new Label();
+            txtSelectedFile = new TextBox();
+            btnOpenFile = new Button();
+            openFileDialog1 = new OpenFileDialog();
+            openFileDialog2 = new OpenFileDialog();
+            openFileDialog = new OpenFileDialog();
+            label8 = new Label();
+            txtRanemeName = new TextBox();
+            btnRenameFile = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -71,7 +80,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(434, 427);
+            label1.Location = new Point(433, 417);
             label1.Name = "label1";
             label1.Size = new Size(172, 20);
             label1.TabIndex = 2;
@@ -79,7 +88,7 @@
             // 
             // txtNewFile
             // 
-            txtNewFile.Location = new Point(670, 422);
+            txtNewFile.Location = new Point(669, 412);
             txtNewFile.Name = "txtNewFile";
             txtNewFile.Size = new Size(232, 27);
             txtNewFile.TabIndex = 3;
@@ -218,7 +227,7 @@
             // 
             // btnNewFile
             // 
-            btnNewFile.Location = new Point(956, 418);
+            btnNewFile.Location = new Point(955, 408);
             btnNewFile.Name = "btnNewFile";
             btnNewFile.Size = new Size(147, 33);
             btnNewFile.TabIndex = 9;
@@ -226,11 +235,71 @@
             btnNewFile.UseVisualStyleBackColor = true;
             btnNewFile.Click += btnNewFile_Click;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(17, 462);
+            label7.Name = "label7";
+            label7.Size = new Size(172, 20);
+            label7.TabIndex = 2;
+            label7.Text = "New File (Include path)";
+            // 
+            // txtSelectedFile
+            // 
+            txtSelectedFile.Location = new Point(205, 459);
+            txtSelectedFile.Name = "txtSelectedFile";
+            txtSelectedFile.Size = new Size(197, 27);
+            txtSelectedFile.TabIndex = 3;
+            // 
+            // btnOpenFile
+            // 
+            btnOpenFile.Location = new Point(423, 457);
+            btnOpenFile.Name = "btnOpenFile";
+            btnOpenFile.Size = new Size(108, 30);
+            btnOpenFile.TabIndex = 10;
+            btnOpenFile.Text = "Open";
+            btnOpenFile.UseVisualStyleBackColor = true;
+            btnOpenFile.Click += btnOpenFile_Click;
+            // 
+            // openFileDialog
+            // 
+            openFileDialog.FileName = "openFileDialog";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(17, 505);
+            label8.Name = "label8";
+            label8.Size = new Size(66, 20);
+            label8.TabIndex = 2;
+            label8.Text = "Rename";
+            // 
+            // txtRanemeName
+            // 
+            txtRanemeName.Location = new Point(205, 502);
+            txtRanemeName.Name = "txtRanemeName";
+            txtRanemeName.Size = new Size(197, 27);
+            txtRanemeName.TabIndex = 3;
+            // 
+            // btnRenameFile
+            // 
+            btnRenameFile.Location = new Point(423, 500);
+            btnRenameFile.Name = "btnRenameFile";
+            btnRenameFile.Size = new Size(108, 30);
+            btnRenameFile.TabIndex = 11;
+            btnRenameFile.Text = "Rename";
+            btnRenameFile.UseVisualStyleBackColor = true;
+            btnRenameFile.Click += btnRenameFile_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1353, 589);
+            ClientSize = new Size(1173, 664);
+            Controls.Add(btnRenameFile);
+            Controls.Add(btnOpenFile);
             Controls.Add(btnNewFile);
             Controls.Add(panel1);
             Controls.Add(btmShowDirectoryFiles);
@@ -240,12 +309,17 @@
             Controls.Add(txtNewSubDirectory);
             Controls.Add(label3);
             Controls.Add(label2);
+            Controls.Add(txtRanemeName);
+            Controls.Add(label8);
+            Controls.Add(txtSelectedFile);
+            Controls.Add(label7);
             Controls.Add(txtNewFile);
             Controls.Add(label1);
             Controls.Add(txtSystemDetails);
             Controls.Add(cboSystemDrives);
             Name = "Form1";
             Text = "FileHandler";
+            Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -273,5 +347,14 @@
         private Label label5;
         private Button btnCopyDirectory;
         private Button btnNewFile;
+        private Label label7;
+        private TextBox txtSelectedFile;
+        private Button btnOpenFile;
+        private OpenFileDialog openFileDialog1;
+        private OpenFileDialog openFileDialog2;
+        private OpenFileDialog openFileDialog;
+        private Label label8;
+        private TextBox txtRanemeName;
+        private Button btnRenameFile;
     }
 }
