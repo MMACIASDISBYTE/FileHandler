@@ -223,7 +223,7 @@ namespace FileHandle
                 var destination = txtRanemeName.Text;
 
                 var sourceFileInfo = new FileInfo(source);
-                if(sourceFileInfo.Exists)
+                if (sourceFileInfo.Exists)
                 {
                     sourceFileInfo.MoveTo(destination);
                     MessageBox.Show("The file has been renamed");
@@ -232,7 +232,52 @@ namespace FileHandle
                 {
                     MessageBox.Show("Error when traying to rename the file. Is the path correct?");
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnWrite_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txtSelectedFile.Text))
+                    throw new Exception("Make sure you selected a file...");
+                if (!File.Exists(txtSelectedFile.Text))
+                    throw new Exception("Selectec File doesn't exist");
+
+                FileStream fs = new FileStream(txtSelectedFile.Text, FileMode.Create, FileAccess.Write);
+                StreamWriter sw = new StreamWriter(fs);
+                sw.WriteLine(txtWrite.Text);
+                sw.Flush();
+                fs.Close();
+                MessageBox.Show("New content has been succesfully written");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnRead_Click(object sender, EventArgs e)
+        {
+            try
+            {
+            if (string.IsNullOrEmpty(txtSelectedFile.Text))
+                throw new Exception("Make sure you selected a file...");
+            if (!File.Exists(txtSelectedFile.Text))
+                throw new Exception("Selectec File doesn't exist");
+
+            FileStream fs = new FileStream(txtSelectedFile.Text, FileMode.Open, FileAccess.Read);
+            StreamReader sr = new StreamReader(fs);
+            txtRead.Text = sr.ReadToEnd();
+            fs.Close() ;
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

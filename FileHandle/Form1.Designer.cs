@@ -56,13 +56,25 @@
             label8 = new Label();
             txtRanemeName = new TextBox();
             btnRenameFile = new Button();
+            Write = new Label();
+            txtWrite = new TextBox();
+            txtRead = new TextBox();
+            label10 = new Label();
+            txtFind = new TextBox();
+            label11 = new Label();
+            txtUpdate = new TextBox();
+            label12 = new Label();
+            btnWrite = new Button();
+            btnRead = new Button();
+            btnFind = new Button();
+            btnUpdate = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // cboSystemDrives
             // 
             cboSystemDrives.FormattingEnabled = true;
-            cboSystemDrives.Location = new Point(52, 41);
+            cboSystemDrives.Location = new Point(52, 12);
             cboSystemDrives.Name = "cboSystemDrives";
             cboSystemDrives.Size = new Size(335, 28);
             cboSystemDrives.TabIndex = 0;
@@ -70,17 +82,17 @@
             // 
             // txtSystemDetails
             // 
-            txtSystemDetails.Location = new Point(52, 103);
+            txtSystemDetails.Location = new Point(51, 62);
             txtSystemDetails.Multiline = true;
             txtSystemDetails.Name = "txtSystemDetails";
-            txtSystemDetails.Size = new Size(336, 282);
+            txtSystemDetails.Size = new Size(336, 244);
             txtSystemDetails.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(433, 417);
+            label1.Location = new Point(433, 331);
             label1.Name = "label1";
             label1.Size = new Size(172, 20);
             label1.TabIndex = 2;
@@ -88,14 +100,14 @@
             // 
             // txtNewFile
             // 
-            txtNewFile.Location = new Point(669, 412);
+            txtNewFile.Location = new Point(669, 326);
             txtNewFile.Name = "txtNewFile";
             txtNewFile.Size = new Size(232, 27);
             txtNewFile.TabIndex = 3;
             // 
             // btnCreateDirectory
             // 
-            btnCreateDirectory.Location = new Point(956, 29);
+            btnCreateDirectory.Location = new Point(955, 14);
             btnCreateDirectory.Name = "btnCreateDirectory";
             btnCreateDirectory.Size = new Size(163, 30);
             btnCreateDirectory.TabIndex = 4;
@@ -107,7 +119,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(434, 87);
+            label2.Location = new Point(433, 72);
             label2.Name = "label2";
             label2.Size = new Size(137, 20);
             label2.TabIndex = 2;
@@ -115,14 +127,14 @@
             // 
             // txtNewSubDirectory
             // 
-            txtNewSubDirectory.Location = new Point(670, 82);
+            txtNewSubDirectory.Location = new Point(669, 67);
             txtNewSubDirectory.Name = "txtNewSubDirectory";
             txtNewSubDirectory.Size = new Size(232, 27);
             txtNewSubDirectory.TabIndex = 3;
             // 
             // btnNewSubDirectory
             // 
-            btnNewSubDirectory.Location = new Point(956, 77);
+            btnNewSubDirectory.Location = new Point(955, 62);
             btnNewSubDirectory.Name = "btnNewSubDirectory";
             btnNewSubDirectory.Size = new Size(164, 30);
             btnNewSubDirectory.TabIndex = 5;
@@ -134,7 +146,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(434, 132);
+            label3.Location = new Point(433, 117);
             label3.Name = "label3";
             label3.Size = new Size(169, 20);
             label3.TabIndex = 2;
@@ -143,14 +155,14 @@
             // cboDirectoryFiles
             // 
             cboDirectoryFiles.FormattingEnabled = true;
-            cboDirectoryFiles.Location = new Point(670, 130);
+            cboDirectoryFiles.Location = new Point(669, 115);
             cboDirectoryFiles.Name = "cboDirectoryFiles";
             cboDirectoryFiles.Size = new Size(232, 28);
             cboDirectoryFiles.TabIndex = 6;
             // 
             // btmShowDirectoryFiles
             // 
-            btmShowDirectoryFiles.Location = new Point(955, 127);
+            btmShowDirectoryFiles.Location = new Point(954, 112);
             btmShowDirectoryFiles.Name = "btmShowDirectoryFiles";
             btmShowDirectoryFiles.Size = new Size(164, 32);
             btmShowDirectoryFiles.TabIndex = 7;
@@ -166,14 +178,14 @@
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label5);
-            panel1.Location = new Point(441, 188);
+            panel1.Location = new Point(441, 150);
             panel1.Name = "panel1";
-            panel1.Size = new Size(678, 197);
+            panel1.Size = new Size(678, 156);
             panel1.TabIndex = 8;
             // 
             // btnCopyDirectory
             // 
-            btnCopyDirectory.Location = new Point(515, 81);
+            btnCopyDirectory.Location = new Point(514, 58);
             btnCopyDirectory.Name = "btnCopyDirectory";
             btnCopyDirectory.Size = new Size(147, 75);
             btnCopyDirectory.TabIndex = 5;
@@ -183,14 +195,14 @@
             // 
             // txtCopyDirectoryDestination
             // 
-            txtCopyDirectoryDestination.Location = new Point(229, 129);
+            txtCopyDirectoryDestination.Location = new Point(228, 106);
             txtCopyDirectoryDestination.Name = "txtCopyDirectoryDestination";
             txtCopyDirectoryDestination.Size = new Size(232, 27);
             txtCopyDirectoryDestination.TabIndex = 4;
             // 
             // txtCopyDirectorySource
             // 
-            txtCopyDirectorySource.Location = new Point(229, 81);
+            txtCopyDirectorySource.Location = new Point(228, 58);
             txtCopyDirectorySource.Name = "txtCopyDirectorySource";
             txtCopyDirectorySource.Size = new Size(232, 27);
             txtCopyDirectorySource.TabIndex = 3;
@@ -199,7 +211,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(25, 21);
+            label4.Location = new Point(25, 10);
             label4.Name = "label4";
             label4.Size = new Size(155, 28);
             label4.TabIndex = 2;
@@ -209,7 +221,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(25, 136);
+            label6.Location = new Point(24, 113);
             label6.Name = "label6";
             label6.Size = new Size(90, 20);
             label6.TabIndex = 2;
@@ -219,7 +231,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(25, 81);
+            label5.Location = new Point(24, 58);
             label5.Name = "label5";
             label5.Size = new Size(56, 20);
             label5.TabIndex = 2;
@@ -227,7 +239,7 @@
             // 
             // btnNewFile
             // 
-            btnNewFile.Location = new Point(955, 408);
+            btnNewFile.Location = new Point(955, 322);
             btnNewFile.Name = "btnNewFile";
             btnNewFile.Size = new Size(147, 33);
             btnNewFile.TabIndex = 9;
@@ -239,7 +251,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(17, 462);
+            label7.Location = new Point(17, 376);
             label7.Name = "label7";
             label7.Size = new Size(172, 20);
             label7.TabIndex = 2;
@@ -247,14 +259,14 @@
             // 
             // txtSelectedFile
             // 
-            txtSelectedFile.Location = new Point(205, 459);
+            txtSelectedFile.Location = new Point(205, 373);
             txtSelectedFile.Name = "txtSelectedFile";
             txtSelectedFile.Size = new Size(197, 27);
             txtSelectedFile.TabIndex = 3;
             // 
             // btnOpenFile
             // 
-            btnOpenFile.Location = new Point(423, 457);
+            btnOpenFile.Location = new Point(423, 371);
             btnOpenFile.Name = "btnOpenFile";
             btnOpenFile.Size = new Size(108, 30);
             btnOpenFile.TabIndex = 10;
@@ -270,7 +282,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(17, 505);
+            label8.Location = new Point(17, 419);
             label8.Name = "label8";
             label8.Size = new Size(66, 20);
             label8.TabIndex = 2;
@@ -278,14 +290,14 @@
             // 
             // txtRanemeName
             // 
-            txtRanemeName.Location = new Point(205, 502);
+            txtRanemeName.Location = new Point(205, 416);
             txtRanemeName.Name = "txtRanemeName";
             txtRanemeName.Size = new Size(197, 27);
             txtRanemeName.TabIndex = 3;
             // 
             // btnRenameFile
             // 
-            btnRenameFile.Location = new Point(423, 500);
+            btnRenameFile.Location = new Point(423, 414);
             btnRenameFile.Name = "btnRenameFile";
             btnRenameFile.Size = new Size(108, 30);
             btnRenameFile.TabIndex = 11;
@@ -293,11 +305,125 @@
             btnRenameFile.UseVisualStyleBackColor = true;
             btnRenameFile.Click += btnRenameFile_Click;
             // 
+            // Write
+            // 
+            Write.AutoSize = true;
+            Write.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            Write.Location = new Point(125, 465);
+            Write.Name = "Write";
+            Write.Size = new Size(48, 20);
+            Write.TabIndex = 2;
+            Write.Text = "Write";
+            // 
+            // txtWrite
+            // 
+            txtWrite.Location = new Point(53, 502);
+            txtWrite.Multiline = true;
+            txtWrite.Name = "txtWrite";
+            txtWrite.Size = new Size(198, 138);
+            txtWrite.TabIndex = 1;
+            // 
+            // txtRead
+            // 
+            txtRead.Location = new Point(330, 502);
+            txtRead.Multiline = true;
+            txtRead.Name = "txtRead";
+            txtRead.Size = new Size(198, 138);
+            txtRead.TabIndex = 1;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(401, 465);
+            label10.Name = "label10";
+            label10.Size = new Size(44, 20);
+            label10.TabIndex = 2;
+            label10.Text = "Read";
+            // 
+            // txtFind
+            // 
+            txtFind.Location = new Point(633, 502);
+            txtFind.Multiline = true;
+            txtFind.Name = "txtFind";
+            txtFind.Size = new Size(198, 138);
+            txtFind.TabIndex = 1;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Location = new Point(709, 465);
+            label11.Name = "label11";
+            label11.Size = new Size(39, 20);
+            label11.TabIndex = 2;
+            label11.Text = "Find";
+            // 
+            // txtUpdate
+            // 
+            txtUpdate.Location = new Point(902, 502);
+            txtUpdate.Multiline = true;
+            txtUpdate.Name = "txtUpdate";
+            txtUpdate.Size = new Size(198, 138);
+            txtUpdate.TabIndex = 1;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.Location = new Point(969, 465);
+            label12.Name = "label12";
+            label12.Size = new Size(60, 20);
+            label12.TabIndex = 2;
+            label12.Text = "Update";
+            // 
+            // btnWrite
+            // 
+            btnWrite.Location = new Point(106, 660);
+            btnWrite.Name = "btnWrite";
+            btnWrite.Size = new Size(95, 40);
+            btnWrite.TabIndex = 12;
+            btnWrite.Text = "Write";
+            btnWrite.UseVisualStyleBackColor = true;
+            btnWrite.Click += btnWrite_Click;
+            // 
+            // btnRead
+            // 
+            btnRead.Location = new Point(379, 660);
+            btnRead.Name = "btnRead";
+            btnRead.Size = new Size(95, 40);
+            btnRead.TabIndex = 13;
+            btnRead.Text = "Read";
+            btnRead.UseVisualStyleBackColor = true;
+            btnRead.Click += btnRead_Click;
+            // 
+            // btnFind
+            // 
+            btnFind.Location = new Point(683, 660);
+            btnFind.Name = "btnFind";
+            btnFind.Size = new Size(95, 40);
+            btnFind.TabIndex = 14;
+            btnFind.Text = "Find";
+            btnFind.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.Location = new Point(953, 660);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(95, 40);
+            btnUpdate.TabIndex = 15;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1173, 664);
+            ClientSize = new Size(1173, 751);
+            Controls.Add(btnUpdate);
+            Controls.Add(btnFind);
+            Controls.Add(btnRead);
+            Controls.Add(btnWrite);
             Controls.Add(btnRenameFile);
             Controls.Add(btnOpenFile);
             Controls.Add(btnNewFile);
@@ -310,11 +436,19 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(txtRanemeName);
+            Controls.Add(label12);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(Write);
             Controls.Add(label8);
             Controls.Add(txtSelectedFile);
+            Controls.Add(txtUpdate);
             Controls.Add(label7);
+            Controls.Add(txtFind);
             Controls.Add(txtNewFile);
+            Controls.Add(txtRead);
             Controls.Add(label1);
+            Controls.Add(txtWrite);
             Controls.Add(txtSystemDetails);
             Controls.Add(cboSystemDrives);
             Name = "Form1";
@@ -356,5 +490,17 @@
         private Label label8;
         private TextBox txtRanemeName;
         private Button btnRenameFile;
+        private Label Write;
+        private TextBox txtWrite;
+        private TextBox txtRead;
+        private Label label10;
+        private TextBox txtFind;
+        private Label label11;
+        private TextBox txtUpdate;
+        private Label label12;
+        private Button btnWrite;
+        private Button btnRead;
+        private Button btnFind;
+        private Button btnUpdate;
     }
 }
