@@ -50,12 +50,12 @@ namespace FileHandle
         {
             try
             {
-                if (string.IsNullOrEmpty(txtNewDirectory.Text))
+                if (string.IsNullOrEmpty(txtNewFile.Text))
                     throw new Exception("Please, enter a path for the directory");
 
-                if (!Directory.Exists(txtNewDirectory.Text))
+                if (!Directory.Exists(txtNewFile.Text))
                 {
-                    Directory.CreateDirectory(txtNewDirectory.Text);
+                    Directory.CreateDirectory(txtNewFile.Text);
                     MessageBox.Show("Directory created");
                 }
                 else
@@ -73,12 +73,12 @@ namespace FileHandle
         {
             try
             {
-                if (string.IsNullOrEmpty(txtNewDirectory.Text))
+                if (string.IsNullOrEmpty(txtNewFile.Text))
                     throw new Exception("Make sure you have included a directory path on new Directory");
                 if (string.IsNullOrEmpty(txtNewSubDirectory.Text))
                     throw new Exception("Make sure you have included a path for the  new subdirectory");
 
-                var directoryPath = txtNewDirectory.Text;
+                var directoryPath = txtNewFile.Text;
                 var subDirInfor = new DirectoryInfo(directoryPath);
                 subDirInfor.CreateSubdirectory(txtNewSubDirectory.Text);
                 MessageBox.Show("subDirectory has Been created");
@@ -95,10 +95,10 @@ namespace FileHandle
         {
             try
             {
-                if (string.IsNullOrEmpty(txtNewDirectory.Text))
+                if (string.IsNullOrEmpty(txtNewFile.Text))
                     throw new Exception("Make sure you have included a directory path on new Directory");
 
-                var directory = txtNewDirectory.Text;
+                var directory = txtNewFile.Text;
                 var directoryInfo = new DirectoryInfo(directory);
 
                 if (!directoryInfo.Exists)
@@ -116,6 +116,76 @@ namespace FileHandle
                 {
                     if (!cboDirectoryFiles.Items.Contains($"{file.Name}"))
                         cboDirectoryFiles.Items.Add($"{file.Name}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnCopyDirectory_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txtCopyDirectorySource.Text) || string.IsNullOrEmpty(txtCopyDirectoryDestination.Text))
+                    throw new Exception("Source and Destination fiels should have values");
+
+                var sourceDirectory = new DirectoryInfo(txtCopyDirectorySource.Text);
+                var sourceDestination = new DirectoryInfo(txtCopyDirectoryDestination.Text);
+                CopyDirectory(sourceDirectory, sourceDestination);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void CopyDirectory(DirectoryInfo sourceDirectory, DirectoryInfo destinationDirectory)
+        {
+            try
+            {
+                if (!sourceDirectory.Exists)
+                    throw new Exception("Source directory doesn't exist");
+                if (!destinationDirectory.Exists)
+                    destinationDirectory.Create();
+
+                var files = sourceDirectory.GetFiles();
+                foreach (var file in files)
+                {
+                    file.CopyTo(Path.Combine(destinationDirectory.FullName, file.Name));
+                }
+
+                var directories = sourceDirectory.GetDirectories();
+                foreach (var directory in directories)
+                {
+                    string destination = Path.Combine(destinationDirectory.FullName, directory.Name);
+                    CopyDirectory(directory, new DirectoryInfo(destination));
+                }
+                MessageBox.Show("Directory copied successfully");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnNewFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txtNewFile.Text))
+                    throw new Exception("Make sure you have included a path for the New File");
+
+                if (!File.Exists(txtNewFile.Text))
+                {
+                    File.Create(txtNewFile.Text);
+                    MessageBox.Show("File Created");
+                }
+                else
+                {
+                    MessageBox.Show("Please enter the full path of the new File");
                 }
             }
             catch (Exception ex)

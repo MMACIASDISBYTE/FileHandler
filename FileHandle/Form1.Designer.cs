@@ -31,7 +31,7 @@
             cboSystemDrives = new ComboBox();
             txtSystemDetails = new TextBox();
             label1 = new Label();
-            txtNewDirectory = new TextBox();
+            txtNewFile = new TextBox();
             btnCreateDirectory = new Button();
             label2 = new Label();
             txtNewSubDirectory = new TextBox();
@@ -39,6 +39,15 @@
             label3 = new Label();
             cboDirectoryFiles = new ComboBox();
             btmShowDirectoryFiles = new Button();
+            panel1 = new Panel();
+            btnCopyDirectory = new Button();
+            txtCopyDirectoryDestination = new TextBox();
+            txtCopyDirectorySource = new TextBox();
+            label4 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            btnNewFile = new Button();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // cboSystemDrives
@@ -62,18 +71,18 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(434, 39);
+            label1.Location = new Point(434, 427);
             label1.Name = "label1";
-            label1.Size = new Size(214, 20);
+            label1.Size = new Size(172, 20);
             label1.TabIndex = 2;
-            label1.Text = "New Directory (Include path)";
+            label1.Text = "New File (Include path)";
             // 
-            // txtNewDirectory
+            // txtNewFile
             // 
-            txtNewDirectory.Location = new Point(670, 34);
-            txtNewDirectory.Name = "txtNewDirectory";
-            txtNewDirectory.Size = new Size(232, 27);
-            txtNewDirectory.TabIndex = 3;
+            txtNewFile.Location = new Point(670, 422);
+            txtNewFile.Name = "txtNewFile";
+            txtNewFile.Size = new Size(232, 27);
+            txtNewFile.TabIndex = 3;
             // 
             // btnCreateDirectory
             // 
@@ -140,11 +149,90 @@
             btmShowDirectoryFiles.UseVisualStyleBackColor = true;
             btmShowDirectoryFiles.Click += btmShowDirectoryFiles_Click;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(btnCopyDirectory);
+            panel1.Controls.Add(txtCopyDirectoryDestination);
+            panel1.Controls.Add(txtCopyDirectorySource);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label5);
+            panel1.Location = new Point(441, 188);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(678, 197);
+            panel1.TabIndex = 8;
+            // 
+            // btnCopyDirectory
+            // 
+            btnCopyDirectory.Location = new Point(515, 81);
+            btnCopyDirectory.Name = "btnCopyDirectory";
+            btnCopyDirectory.Size = new Size(147, 75);
+            btnCopyDirectory.TabIndex = 5;
+            btnCopyDirectory.Text = "Copy";
+            btnCopyDirectory.UseVisualStyleBackColor = true;
+            btnCopyDirectory.Click += btnCopyDirectory_Click;
+            // 
+            // txtCopyDirectoryDestination
+            // 
+            txtCopyDirectoryDestination.Location = new Point(229, 129);
+            txtCopyDirectoryDestination.Name = "txtCopyDirectoryDestination";
+            txtCopyDirectoryDestination.Size = new Size(232, 27);
+            txtCopyDirectoryDestination.TabIndex = 4;
+            // 
+            // txtCopyDirectorySource
+            // 
+            txtCopyDirectorySource.Location = new Point(229, 81);
+            txtCopyDirectorySource.Name = "txtCopyDirectorySource";
+            txtCopyDirectorySource.Size = new Size(232, 27);
+            txtCopyDirectorySource.TabIndex = 3;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(25, 21);
+            label4.Name = "label4";
+            label4.Size = new Size(155, 28);
+            label4.TabIndex = 2;
+            label4.Text = "Copy Directory";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(25, 136);
+            label6.Name = "label6";
+            label6.Size = new Size(90, 20);
+            label6.TabIndex = 2;
+            label6.Text = "Destination";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(25, 81);
+            label5.Name = "label5";
+            label5.Size = new Size(56, 20);
+            label5.TabIndex = 2;
+            label5.Text = "Source";
+            // 
+            // btnNewFile
+            // 
+            btnNewFile.Location = new Point(956, 418);
+            btnNewFile.Name = "btnNewFile";
+            btnNewFile.Size = new Size(147, 33);
+            btnNewFile.TabIndex = 9;
+            btnNewFile.Text = "Create FIle";
+            btnNewFile.UseVisualStyleBackColor = true;
+            btnNewFile.Click += btnNewFile_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1353, 589);
+            Controls.Add(btnNewFile);
+            Controls.Add(panel1);
             Controls.Add(btmShowDirectoryFiles);
             Controls.Add(cboDirectoryFiles);
             Controls.Add(btnNewSubDirectory);
@@ -152,12 +240,14 @@
             Controls.Add(txtNewSubDirectory);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(txtNewDirectory);
+            Controls.Add(txtNewFile);
             Controls.Add(label1);
             Controls.Add(txtSystemDetails);
             Controls.Add(cboSystemDrives);
             Name = "Form1";
             Text = "FileHandler";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -167,7 +257,7 @@
         private ComboBox cboSystemDrives;
         private TextBox txtSystemDetails;
         private Label label1;
-        private TextBox txtNewDirectory;
+        private TextBox txtNewFile;
         private Button btnCreateDirectory;
         private Label label2;
         private TextBox txtNewSubDirectory;
@@ -175,5 +265,13 @@
         private Label label3;
         private ComboBox cboDirectoryFiles;
         private Button btmShowDirectoryFiles;
+        private Panel panel1;
+        private TextBox txtCopyDirectoryDestination;
+        private TextBox txtCopyDirectorySource;
+        private Label label4;
+        private Label label6;
+        private Label label5;
+        private Button btnCopyDirectory;
+        private Button btnNewFile;
     }
 }
